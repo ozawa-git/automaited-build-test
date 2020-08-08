@@ -1,0 +1,125 @@
+PS C:\Users\ozawa> cd ror
+PS C:\Users\ozawa\ror> docker-compose up -d
+Starting ror_db_1 ... done
+Starting ror_web_1 ... done
+PS C:\Users\ozawa\ror> docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+07c18d4a86db        ror_web             "rake db:create"         26 hours ago        Exited (7) 26 hours ago                        ror_web_run_218ab24a864e
+34b41159aeaf        ror_web             "gem list"               26 hours ago        Exited (0) 26 hours ago                        ror_web_run_3f411643314f
+ee610ea9f368        ror_web             "rake db:create"         26 hours ago        Exited (7) 26 hours ago                        ror_web_run_c900d3c16fa6
+043b8c51b40a        ror_web             "bundle exec rails s…"   26 hours ago        Exited (1) 9 seconds ago                       ror_web_1
+676cdef410e4        8c04e4e6219b        "rails new . --force…"   2 days ago          Exited (0) 2 days ago                          ror_web_run_c5efb7553ed7
+818626c3ba9c        0e1db669d557        "/bin/sh -c 'apt-get…"   2 days ago          Exited (100) 2 days ago                        festive_edison
+73936a264673        postgres            "docker-entrypoint.s…"   2 days ago          Up 10 seconds              5432/tcp            ror_db_1
+PS C:\Users\ozawa\ror> docker-compose logs
+Attaching to ror_web_1, ror_db_1
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   |
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   |
+db_1   | Data page checksums are disabled.
+db_1   |
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok     
+db_1   | creating subdirectories ... ok
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default time zone ... Etc/UTC
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | performing post-bootstrap initialization ... ok
+db_1   | syncing data to disk ... ok
+db_1   |
+db_1   |
+db_1   | Success. You can now start the database server using:
+db_1   |
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   |
+db_1   | initdb: warning: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | waiting for server to start....2020-08-05 23:01:40.597 UTC [46] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-05 23:01:40.599 UTC [46] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-05 23:01:40.616 UTC [47] LOG:  database system was shut down at 2020-08-05 23:01:40 UTC
+db_1   | 2020-08-05 23:01:40.622 UTC [46] LOG:  database system is ready to accept connections
+db_1   |  done
+db_1   | server started
+db_1   |
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   |
+db_1   | 2020-08-05 23:01:40.688 UTC [46] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-08-05 23:01:40.690 UTC [46] LOG:  aborting any active transactions
+db_1   | 2020-08-05 23:01:40.692 UTC [46] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
+db_1   | 2020-08-05 23:01:40.693 UTC [48] LOG:  shutting down
+db_1   | 2020-08-05 23:01:40.711 UTC [46] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   |
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   |
+db_1   | 2020-08-05 23:01:40.801 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-05 23:01:40.802 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-05 23:01:40.802 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-05 23:01:40.805 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-05 23:01:40.821 UTC [55] LOG:  database system was shut down at 2020-08-05 23:01:40 UTC
+db_1   | 2020-08-05 23:01:40.826 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 2020-08-05 23:11:33.020 UTC [1] LOG:  received smart shutdown request
+db_1   | 2020-08-05 23:11:33.038 UTC [1] LOG:  background worker "logical replication launcher" (PID 61) exited with exit code 1
+db_1   | 2020-08-05 23:11:33.043 UTC [56] LOG:  shutting down
+db_1   |
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   |
+db_1   | 2020-08-06 22:48:05.574 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-06 22:48:05.574 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-06 22:48:05.574 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-06 22:48:05.581 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-06 22:48:05.602 UTC [24] LOG:  database system was shut down at 2020-08-05 23:11:33 UTC
+db_1   | 2020-08-06 22:48:05.621 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 2020-08-06 23:23:33.800 UTC [1] LOG:  received smart shutdown request
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   |
+db_1   | 2020-08-08 01:01:01.428 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-08 01:01:01.428 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-08 01:01:01.428 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-08 01:01:01.432 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-08 01:01:01.449 UTC [24] LOG:  database system was interrupted; last known up at 2020-08-06 22:53:05 UTC
+db_1   | 2020-08-08 01:01:01.697 UTC [24] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-08-08 01:01:01.700 UTC [24] LOG:  redo starts at 0/16455C0
+db_1   | 2020-08-08 01:01:01.700 UTC [24] LOG:  invalid record length at 0/16456A8: wanted 24, got 0
+db_1   | 2020-08-08 01:01:01.700 UTC [24] LOG:  redo done at 0/1645670
+db_1   | 2020-08-08 01:01:01.723 UTC [1] LOG:  database system is ready to accept connections
+web_1  | Bundler::GemNotFound: Could not find i18n-0.9.5 in any of the sources
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/spec_set.rb:87:in `block in materialize'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/spec_set.rb:80:in `map!'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/spec_set.rb:80:in `materialize'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/definition.rb:176:in `specs'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/definition.rb:224:in `requested_specs'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/runtime.rb:118:in `block in definition_method'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/runtime.rb:19:in `setup'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler.rb:100:in `setup'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/setup.rb:20:in `<top (required)>'
+web_1  |   /usr/local/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+web_1  |   /usr/local/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+web_1  | bundler: failed to load command: rails (/usr/local/bundle/bin/rails)
+web_1  | Bundler::GemNotFound: Could not find i18n-0.9.5 in any of the sources
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/spec_set.rb:87:in `block in materialize'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/spec_set.rb:80:in `map!'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/spec_set.rb:80:in `materialize'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/definition.rb:176:in `specs'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/definition.rb:235:in `specs_for'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/definition.rb:224:in `requested_specs'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/runtime.rb:118:in `block in definition_method'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/runtime.rb:19:in `setup'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler.rb:100:in `setup'
+web_1  |   /usr/local/lib/ruby/gems/2.3.0/gems/bundler-1.14.6/lib/bundler/setup.rb:20:in `<top (required)>'
+web_1  |   /usr/local/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+web_1  |   /usr/local/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+web_1  | bundler: failed to load command: rails (/usr/local/bundle/bin/rails)
+PS C:\Users\ozawa\ror> docker-compose run web rake db:create
+Starting ror_db_1 ... done
+Could not find i18n-0.9.5 in any of the sources
+Run `bundle install` to install missing gems.
