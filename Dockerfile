@@ -6,3 +6,4 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/gemfile.lock
 RUN bundle install
 COPY . /myapp
+

@@ -1,0 +1,114 @@
+PS C:\Users\ozawa\ror> docker-compose logs
+Attaching to ror_web_1, ror_db_1
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   |
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   |
+db_1   | Data page checksums are disabled.
+db_1   |
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1   | creating subdirectories ... ok
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default time zone ... Etc/UTC
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | performing post-bootstrap initialization ... ok
+db_1   | syncing data to disk ... ok
+db_1   |
+db_1   |
+db_1   | Success. You can now start the database server using:
+db_1   |
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   |
+db_1   | initdb: warning: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | waiting for server to start....2020-08-05 23:01:40.597 UTC [46] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-05 23:01:40.599 UTC [46] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-05 23:01:40.616 UTC [47] LOG:  database system was shut down at 2020-08-05 23:01:40 UTC
+db_1   | 2020-08-05 23:01:40.622 UTC [46] LOG:  database system is ready to accept connections
+db_1   |  done
+db_1   | server started
+db_1   |
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   |
+db_1   | 2020-08-05 23:01:40.688 UTC [46] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-08-05 23:01:40.690 UTC [46] LOG:  aborting any active transactions
+db_1   | 2020-08-05 23:01:40.692 UTC [46] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
+db_1   | 2020-08-05 23:01:40.693 UTC [48] LOG:  shutting down
+db_1   | 2020-08-05 23:01:40.711 UTC [46] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   |
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   |
+db_1   | 2020-08-05 23:01:40.801 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-05 23:01:40.802 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-05 23:01:40.802 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-05 23:01:40.805 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-05 23:01:40.821 UTC [55] LOG:  database system was shut down at 2020-08-05 23:01:40 UTC
+db_1   | 2020-08-05 23:01:40.826 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 2020-08-05 23:11:33.020 UTC [1] LOG:  received smart shutdown request
+db_1   | 2020-08-05 23:11:33.038 UTC [1] LOG:  background worker "logical replication launcher" (PID 61) exited with exit code 1
+db_1   | 2020-08-05 23:11:33.043 UTC [56] LOG:  shutting down
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   |
+db_1   | 2020-08-06 22:48:05.574 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-06 22:48:05.574 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-06 22:48:05.574 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-06 22:48:05.581 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-06 22:48:05.602 UTC [24] LOG:  database system was shut down at 2020-08-05 23:11:33 UTC
+db_1   | 2020-08-06 22:48:05.621 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 2020-08-06 23:23:33.800 UTC [1] LOG:  received smart shutdown request
+db_1   |
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   |
+db_1   | 2020-08-08 01:01:01.428 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-08 01:01:01.428 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-08 01:01:01.428 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-08 01:01:01.432 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-08 01:01:01.449 UTC [24] LOG:  database system was interrupted; last known up at 2020-08-06 22:53:05 UTC
+db_1   | 2020-08-08 01:01:01.697 UTC [24] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-08-08 01:01:01.700 UTC [24] LOG:  redo starts at 0/16455C0
+db_1   | 2020-08-08 01:01:01.700 UTC [24] LOG:  invalid record length at 0/16456A8: wanted 24, got 0
+db_1   | 2020-08-08 01:01:01.723 UTC [1] LOG:  database system is ready to accept connections
+db_1   |
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   |
+db_1   | 2020-08-08 23:44:51.558 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-08 23:44:51.558 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-08 23:44:51.558 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-08 23:44:51.562 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-08 23:44:51.580 UTC [24] LOG:  database system was shut down at 2020-08-08 01:32:55 UTC
+db_1   | 2020-08-08 23:44:51.591 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 2020-08-09 00:14:00.948 UTC [1] LOG:  received smart shutdown request
+db_1   |
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   |
+db_1   | 2020-08-09 22:50:46.069 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-09 22:50:46.070 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-09 22:50:46.070 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-09 22:50:46.075 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-09 22:50:46.093 UTC [25] LOG:  database system was shut down at 2020-08-09 00:14:01 UTC
+db_1   | 2020-08-09 22:50:46.109 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 2020-08-10 00:30:55.066 UTC [1] LOG:  received smart shutdown request
+db_1   |
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   |
+db_1   | 2020-08-10 22:48:12.564 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+db_1   | 2020-08-10 22:48:12.565 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-08-10 22:48:12.565 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-08-10 22:48:12.570 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-08-10 22:48:12.588 UTC [24] LOG:  database system was shut down at 2020-08-10 00:30:55 UTC
+db_1   | 2020-08-10 22:48:12.603 UTC [1] LOG:  database system is ready to accept connections
+web_1  | A server is already running. Check /myapp/tmp/pids/server.pid.
+web_1  | => Booting Puma
+web_1  | => Rails 5.0.7.2 application starting in development on http://0.0.0.0:3000
+web_1  | => Run `rails server -h` for more startup options
+web_1  | Exiting
